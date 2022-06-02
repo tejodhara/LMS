@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import FormComp from './components/customComp/FormComp';
+// import SecondaryComp from './components/SecondaryComp';
+// import PrimaryComp from './components/PrimaryComp';
+// import EducationDetails from './components/EducationDetails';
+import TabNav from './components/Employee/TabNav';
+import TabComp from './components/customComp/TabComp';
+import 'antd/dist/antd.css'; 
+import NavBar from './components/Home/NavBar';
+import ModalCom from './components/customComp/ModalCom';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <NavBar />
+    {/* <TabComp /> */}
+    {/* <ModalCom /> */}
     </div>
   );
 }

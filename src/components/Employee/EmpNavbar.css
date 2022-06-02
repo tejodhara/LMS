@@ -1,0 +1,28 @@
+/* .header{
+   height: 80px;
+   justify-content: left;
+}
+.gsearch{
+   margin-right: 500px;
+} */
+.ant-layout-header{
+    background: #FFFFFF !important;
+    height: 60px !important;
+    padding: 0 30px !important;
+ }
+ 
+ .ant-layout-sider{
+    background: #FFFFFF !important;
+    max-width: 4rem !important;
+    min-width: 3rem !important;
+    padding: 8px;
+    /* border: 1px solid black */
+ }
+ 
+ .site-layout-background {
+    background: #fff;
+  }
+ 
+ /* .ant-btn-default{
+    margin-left: 200px;
+ } */

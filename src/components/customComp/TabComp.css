@@ -1,0 +1,12 @@
+.ant-tabs-tab .ant-tabs-tab-btn{
+    color:#717171;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.ant-tabs-tab-active{
+    color:#086288 !important;
+    border-bottom: #FAA81D solid 3px !important ;
+    font-size: 80px ;
+
+}
