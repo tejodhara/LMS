@@ -1,9 +1,11 @@
 import { Divider, Radio, Table } from 'antd';
 import { useState } from 'react';
-import { Badge } from 'react-bootstrap';
+import { Badge, Dropdown } from 'react-bootstrap';
 import './Table1.css'
+import InputCom from './../customComp/InputCom';
+import FormComp from './../customComp/FormComp';
 
-const technologies= ['react','java script']
+const tech =['React JS','JavaScript','HTML']
 const columns = [
   {
     title: 'No.',
@@ -26,11 +28,11 @@ const columns = [
   {
     title: 'Technologies',
     dataIndex: 'technologies',
-    // render: {technologies.map((idx,val)=>{return <Badge bg="primary" key={idx} val={val}>{val}</Badge>})}
+    // render:  ()=>{tech.map((idx,val)=>{return <Badge bg="primary" key={idx} >{val}</Badge>})},
     render: ()=>{return (
       <div>
         <Badge bg="primary">React</Badge>
-        <Badge bg="primary">React</Badge>
+        <Badge bg="primary">JavaScript</Badge>
     </div>
     )}
 
@@ -46,6 +48,12 @@ const columns = [
   {
     title: 'Status',
     dataIndex: 'status',
+    // render: ()=>{return (
+    //   <span>
+    // <InputCom state={false} dropdown={true} dropDownList={['In progress','Completed','To be started']}  style={{width:'5vw'}}/>
+    //      <input type='dropdown' > <option> In Progress</option> <option>Completed</option><option> In Progress</option> </input>
+    // </span>
+    // )}
   },
   {
     title: 'Action',
@@ -120,8 +128,9 @@ const rowSelection = {
 
 const Table1 = () => {
   const [selectionType, setSelectionType] = useState('checkbox');
+
   return (
-    <div>
+    <div >
       <Radio.Group
         onChange={({ target: { value } }) => {
           setSelectionType(value);

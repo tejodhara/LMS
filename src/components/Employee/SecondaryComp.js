@@ -14,7 +14,7 @@ const SecondaryComp = () => {
         <FormComp label1='Father Name' label2='Mother Name' />
         <FormComp label1='Spouce Name' label2='Passport No.' />
         <FormComp state1={false} dropdown1={true} dropDownList1={['Single','Unmarried']} label1='Marital Status'/>
-        <ButtonComp onclick1={<PrimaryComp />} onclick2={navCom1} />
+        <ButtonComp onclick1={()=>{<PrimaryComp />}} onclick2={navCom1} />
     </div>
   )
 }
