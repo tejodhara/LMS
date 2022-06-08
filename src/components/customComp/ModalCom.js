@@ -1,33 +1,32 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
+import FormComp from './FormComp';
 
 
 const ModalCom = ({
-  modHead='Hi',
-  children,
-  show1=false
+  modHead='Batch',
+  showModal, closeModal, modalData
   }) => {
-    const [show, setShow] = useState(show1);
+    // const [show, setShow] = useState(showModal);
 
     // const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    // const handleClose = () => setShow(false);
   
     return (
       <>
-        {/* <Button variant="primary" onClick={handleShow}>
-            Button
-        </Button> */}
-  
-        <Modal show={show1} onHide={handleClose}>
+        {/* Modal Component */}
+        <Modal show={showModal} onHide={closeModal}>
+
         <Modal.Header closeButton>
-          <Modal.Title>Modal {modHead}</Modal.Title>
+          <Modal.Title>{modHead} Modal</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{height: 'auto'}}>
-          <label>Name </label> <br/>
-          <input type='text' name='name'/>
+
+        <Modal.Body style={{height: 'auto',marginLeft:'40px'}}>
+          {modalData}                                                    {/* Recieve data from parent as props*/}
         </Modal.Body>
+
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={closeModal}>
             Create
           </Button>
         </Modal.Footer>

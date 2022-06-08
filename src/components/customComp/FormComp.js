@@ -62,7 +62,7 @@ const FormComp = ({
               type={type1} 
               placeholder={placeholder1} 
               className ={className1}
-              // value={value1}
+              value={value1}
               readOnly={readOnly1}
               onChange={onChange1}
               onClick={onClick1}
@@ -74,7 +74,7 @@ const FormComp = ({
             {dropdown2 ? <DropdownCom dropDownList={dropDownList2} /> :
             <Form.Control  type={type2} placeholder={placeholder2} 
                           className ={className2}
-                          // value={value2}
+                          value={value2}
                           readOnly={readOnly2}
                           onChange={onChange2}
                           onClick={onClick2}
