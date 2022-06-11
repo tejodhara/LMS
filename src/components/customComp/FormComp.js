@@ -44,7 +44,7 @@ const FormComp = ({
           width: "820px",
           height: "64px",
           textAlign: "left",
-          // fontFamily: 'normal normal normal 21px Open Sans',
+          fontFamily: 'normal normal normal 21px Open Sans',
           fontSize: '16px',
           color: '#707070',
           // paddingTop: '20px',

@@ -5,7 +5,9 @@ import FormComp from './FormComp';
 
 const ModalCom = ({
   modHead='Batch',
-  showModal, closeModal, modalData
+  showModal, 
+  closeModal, modalData,children,
+  btnType ="Create"
   }) => {
     // const [show, setShow] = useState(showModal);
 
@@ -22,12 +24,12 @@ const ModalCom = ({
         </Modal.Header>
 
         <Modal.Body style={{height: 'auto',marginLeft:'40px'}}>
-          {modalData}                                                    {/* Recieve data from parent as props*/}
+          {children}                                                    {/* Recieve data from parent as props*/}
         </Modal.Body>
 
         <Modal.Footer>
           <Button variant="primary" onClick={closeModal}>
-            Create
+            {btnType}
           </Button>
         </Modal.Footer>
       </Modal>

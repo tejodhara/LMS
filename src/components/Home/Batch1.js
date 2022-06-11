@@ -47,6 +47,7 @@ const Batch1 = () => {
   }
 
   
+  
   let modalData = (
     <>
     <FormComp label1='Batch Name' state1={false} />

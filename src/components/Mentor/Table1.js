@@ -64,7 +64,7 @@ const columns = [
     dataIndex: 'action',
     render: ()=>{return (
       <>
-      <Button style={{backgroundColor: 'none'}} onClick={()=>{}}><i class="fa-solid fa-pen"></i></Button>  {'   '}
+      <Button style={{backgroundColor:'none'}} onClick={()=>{}}><i class="fa-solid fa-pen"></i></Button>  {'   '}
       <Button onClick={()=>{}}><i class="fa-solid fa-trash"></i></Button> 
        {/* <i class="fa-solid fa-trash"></i> */}
       </>
@@ -148,7 +148,7 @@ const Table1 = ({editModal,deleteModal}) => {
 
       {/* <Divider /> */}
 
-      <Table responsive
+      <Table 
         pagination={false}
         rowSelection={{
           type: selectionType,

@@ -2,29 +2,39 @@
 import { Breadcrumb, Button, Col, Layout, Row } from 'antd';
 import logo from "../asserts/logo1.png"
 import { Input } from 'antd';
-import "./NavBar.css"
+import "./MentorNavbar.css"
 import { SearchOutlined } from '@ant-design/icons';
-import Batch1 from './Batch1';
-import Mentor1 from './Mentor1';
-import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import Request from './Request';
+
+import MultiCheck from '../customComp/MultiCheck';
+// import Batch from './Batch';
+// import Batch1 from './Batch1';
+// import Mentor from './Batch';
+// import Mentor1 from './Mentor1';
+// import { BrowserRouter, Link, Route, Switch, Routes } from 'react-router-dom';
+// import Request from './Request';
+// import ModelComp from '../custom/ModelComp';
+// import BreadCrumComp from './BreadCrumComp';
+import MentorBatch from './MentorBatch';
+import Dashboard from './Dashboard';
 import { useState } from 'react';
 
-
 const { Header, Sider, Content } = Layout;
+
 
 const { Search } = Input;
 
 const onSearch = (value) => console.log(value);
-const NavBar = () => {
-  const [displayComp, setdisplayComp] = useState(true)
-  const [displayComp1, setdisplayComp1] = useState(false)
-  const [navComp, setnavComp] = useState(<Batch1 />)
-  
-  const batchNav =() =>{return setnavComp(<Batch1 />)}
-  const mentorNav =() =>{return setnavComp(<Mentor1 />)}
-  const requestNav =() =>{return setnavComp(<Request />)}
-  return (
+
+const MentorNavbar = () => {
+
+  const [dashboard, setdashboard] = useState(<Dashboard />)
+  let changeTable1=() =>{
+    setdashboard(<Dashboard />)
+  }
+  let changeTable=() =>{
+    setdashboard(<MentorBatch />)
+  }
+  return  (
   <>
 
     <Layout>
@@ -35,7 +45,7 @@ const NavBar = () => {
             </Col>
             <Col span={8}>
             {/* <Input icon={<img src={require("../asserts/Xnix-Line-Search 5.png")} />} placeholder="Search Mentor/Employee"  /> */}
-            <Input icon={<SearchOutlined />} placeholder="Search Mentor/Employee"  />
+            <Input icon={<SearchOutlined />} className='inpNav' placeholder="Search Mentor/Employee"  />
             </Col>
             <Col span={8}>
               <Button class="pull-right" ml-2='true' varient="bordered-primary">Logout</Button>
@@ -46,11 +56,10 @@ const NavBar = () => {
         </Header>
       <Layout>
         <Sider >
-          
         {/* <Button type="primary"  size="large" onClick={<Batch />}> <img src={require("../asserts/group.png")} alt="/" />  </Button> */}
          {/* <div>
           <nav>
-          <Link to="/batch" >
+          <Link to="/" >
             <img src={require("../asserts/group.png")} alt="/" /> 
             <pre>Batch</pre>
           </Link>
@@ -63,20 +72,11 @@ const NavBar = () => {
             <pre>Request</pre>
           </Link></nav>
           </div> */}
-
-          {/* <Button onClick={batchNav} style={{bordor: 'none',}}>
-               <img src={require("../asserts/group.png")}  alt="/" /> 
-          </Button>
-          <Button onClick={mentorNav} style={{bordor: 'none',}}>
-             <img src={require("../asserts/team (4).png")} navigate='/mentor' alt="/" /> 
-          </Button>
-          <Button onClick={requestNav} style={{bordor: 'none',}}>
-            <img src={require("../asserts/add-user.png")} navigate='/request' alt="/" /> 
-          </Button> */}
-
-          <img src={require("../asserts/group.png")} onClick={batchNav} alt="/" /> 
-          <img src={require("../asserts/team (4).png")} onClick={mentorNav} alt="/" /> 
-          <img src={require("../asserts/add-user.png")} onClick={requestNav}  alt="/" /> 
+          <img src={require("../asserts/dashboard (3).png")} alt="/" onClick={changeTable1}/> <br/>
+          <img src={require("../asserts/group.png")} alt="/" onClick={changeTable}/> 
+          <link href='' />
+            {/* <img src={require("../asserts/team (4).png")} alt="/" /> 
+            <img src={require("../asserts/add-user.png")} alt="/" />  */}
         </Sider>
         <Content
         style={{
@@ -85,7 +85,7 @@ const NavBar = () => {
           padding: 15,
           minHeight: '100%',
         }}>
-          <Breadcrumb separator=">"
+          <Breadcrumb
               style={{
                 margin: '8px 0',
               }}
@@ -102,23 +102,21 @@ const NavBar = () => {
               padding: 24,
               minHeight: 460,
             }}
-          >
-            {/* <Navigate to="/batch" replace={true} /> */}
-            {/* <Routes> */}
-              {/* <Route path="/batch" element={<Batch1 />}/>
+          >Content
+            {/* <Routes>
+              <Route path="/" element={<Batch1 />}/>
               <Route path='/mentor' element={<Mentor1 /> } /> 
-              <Route path ='/request' element={<Request />} /> */}
-            {/* </Routes>  */}
+              <Route path ='/request' element={<Request />} />
+            </Routes>  */}
+ {/* <MultiCheck /> */}
+              {dashboard}
+            {/* <MentorBatch /> */}
 
-            {navComp}
-
-
-          </div>
-          </Content>
+          </div></Content>
       </Layout>
     </Layout>
 
   </>
-)}
+);}
 
-export default NavBar;
+export default MentorNavbar;
