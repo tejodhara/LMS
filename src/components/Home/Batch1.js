@@ -4,6 +4,8 @@ import image from "../asserts/Xnix-Line-Search 5.svg"
 import Table1 from './Table1';
 import ModalCom from './../customComp/ModalCom';
 import FormComp from './../customComp/FormComp';
+import MultiCheck from '../customComp/MultiCheck';
+import { FormLabel } from 'react-bootstrap';
 
 
 const { Header, Content } = Layout;
@@ -46,7 +48,7 @@ const Batch1 = () => {
     })
   }
 
-  
+  const editModal =() =>{setshowModal(true)}
   
   let modalData = (
     <>
@@ -57,6 +59,8 @@ const Batch1 = () => {
       <FormComp dropdown1={true} 
         name1={'technologies'} value1={addBatchData.technologies} onChange1={()=>{handleChange()}} 
         dropDownList1={["React JS","Angular","Java","Python"]} label1='Technologies' state1={false} />
+        {/* <FormLabel style={{marginTop:'10px'}}>Technologies</FormLabel>
+        <MultiCheck /> */}
       <FormComp label1='Start Date' type1={"Date"} state1={false} 
         name1={'startDate'} value1={addBatchData.startDate} onChange1={()=>{handleChange()}}
       />
@@ -83,7 +87,9 @@ const Batch1 = () => {
         </Row>
       </Header>
         <Content>
-            <Table1 />
+            <Table1 
+              editModal={editModal}
+            />
         </Content>
     </Layout>
 

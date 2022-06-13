@@ -4,10 +4,12 @@ import FormComp from './FormComp';
 
 
 const ModalCom = ({
-  modHead='Batch',
+  modHead='Batch Modal',
   showModal, 
   closeModal, modalData,children,
-  btnType ="Create"
+  btnType ="Create",
+  style={},
+  size=''
   }) => {
     // const [show, setShow] = useState(showModal);
 
@@ -17,14 +19,14 @@ const ModalCom = ({
     return (
       <>
         {/* Modal Component */}
-        <Modal show={showModal} onHide={closeModal}>
+        <Modal show={showModal} onHide={closeModal} size={size} style={style}>
 
         <Modal.Header closeButton>
-          <Modal.Title>{modHead} Modal</Modal.Title>
+          <Modal.Title>{modHead} </Modal.Title>
         </Modal.Header>
 
         <Modal.Body style={{height: 'auto',marginLeft:'40px'}}>
-          {children}                                                    {/* Recieve data from parent as props*/}
+          {children}       {modalData}                                             {/* Recieve data from parent as props*/}
         </Modal.Body>
 
         <Modal.Footer>

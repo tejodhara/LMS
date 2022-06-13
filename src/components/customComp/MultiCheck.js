@@ -53,7 +53,7 @@ const MultiCheck = () => {
     placeholder: 'Please select',
     style: {
     //   width: '100%',
-    width: "700px",
+    width: "370px",
     height: "64px",
     textAlign: "left",
     fontFamily: 'normal normal normal 21px Open Sans',

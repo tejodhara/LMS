@@ -1,26 +1,46 @@
-// ant framework
 import { Breadcrumb, Button, Col, Layout, Row } from 'antd';
 import logo from "../asserts/logo1.png"
 import { Input } from 'antd';
 import "./EmpNavbar.css"
 import { SearchOutlined } from '@ant-design/icons';
-// import Batch from './Batch';
-// import Batch1 from './Batch1';
-// import Mentor from './Batch';
-// import Mentor1 from './Mentor1';
-// import { BrowserRouter, Link, Route, Switch, Routes } from 'react-router-dom';
-// import Request from './Request';
-// import ModelComp from '../custom/ModelComp';
-// import BreadCrumComp from './BreadCrumComp';
+import Dashboard from './../Mentor/Dashboard';
+import { Modal } from 'react-bootstrap';
+import { useState } from 'react';
 
 const { Header, Sider, Content } = Layout;
 
 const { Search } = Input;
 
 const onSearch = (value) => console.log(value);
-const EmpNavbar = () => (
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="small"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Body closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+          
+        </Modal.Title><br />
+        <Button onClick={props.onHide} >Close</Button>
+      </Modal.Body>
+    </Modal>
+  );
+}
+
+const EmpNavbar = () => {
+  const [modalShow, setModalShow] = useState(true);
+  // modal to change password
+  <MyVerticallyCenteredModal
+  show={modalShow}
+  onHide={() => setModalShow(false)} />
+
+  return(
   <>
-  {/* <BrowserRouter > */}
     <Layout>
         <Header >
           <Row justify="space-around">
@@ -40,23 +60,7 @@ const EmpNavbar = () => (
         </Header>
       <Layout>
         <Sider >
-        {/* <Button type="primary"  size="large" onClick={<Batch />}> <img src={require("../asserts/group.png")} alt="/" />  </Button> */}
-         {/* <div>
-          <nav>
-          <Link to="/" >
-            <img src={require("../asserts/group.png")} alt="/" /> 
-            <pre>Batch</pre>
-          </Link>
-          <Link to="/mentor" >
-            <img src={require("../asserts/team (4).png")} alt="/" /> 
-            <pre>Mentor</pre> 
-          </Link>
-          <Link to="/request" >
-            <img src={require("../asserts/add-user.png")} alt="/" /> 
-            <pre>Request</pre>
-          </Link></nav>
-          </div> */}
-          <img src={require("../asserts/group.png")} alt="/" /> 
+          <img src={require("../asserts/group.png")} onClick={()=>{}} alt="/" /> 
             {/* <img src={require("../asserts/team (4).png")} alt="/" /> 
             <img src={require("../asserts/add-user.png")} alt="/" />  */}
         </Sider>
@@ -84,17 +88,14 @@ const EmpNavbar = () => (
               padding: 24,
               minHeight: 460,
             }}
-          >Content
-            {/* <Routes>
-              <Route path="/" element={<Batch1 />}/>
-              <Route path='/mentor' element={<Mentor1 /> } /> 
-              <Route path ='/request' element={<Request />} />
-            </Routes>  */}
+          >
+            Content
+{/* <Dashboard/> */}
           </div></Content>
       </Layout>
     </Layout>
-    {/* </BrowserRouter > */}
+
   </>
-);
+);}
 
 export default EmpNavbar;

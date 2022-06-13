@@ -11,6 +11,7 @@ const FormComp = ({
     className1 = "",
     placeholder1 = "",
     value1 = "",
+    name1='',
     onChange1 = () => {},
     onClick1 = () => {},
     size = "default",
@@ -26,6 +27,7 @@ const FormComp = ({
     className2 = "",
     placeholder2 = "",
     value2 = "",
+    name2='',
     onChange2 = () => {},
     onClick2 = () => {},
     style2 = {},
@@ -63,6 +65,7 @@ const FormComp = ({
               placeholder={placeholder1} 
               className ={className1}
               value={value1}
+              name={name1}
               readOnly={readOnly1}
               onChange={onChange1}
               onClick={onClick1}
@@ -75,6 +78,7 @@ const FormComp = ({
             <Form.Control  type={type2} placeholder={placeholder2} 
                           className ={className2}
                           value={value2}
+                          name={name2}
                           readOnly={readOnly2}
                           onChange={onChange2}
                           onClick={onClick2}

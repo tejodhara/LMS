@@ -1,28 +1,15 @@
-// ant framework
-import { Breadcrumb, Button, Col, Layout, Row } from 'antd';
+import { Breadcrumb, Button, Col, Layout, Row, Avatar } from 'antd';
 import logo from "../asserts/logo1.png"
 import { Input } from 'antd';
 import "./MentorNavbar.css"
-import { SearchOutlined } from '@ant-design/icons';
-
+import { SearchOutlined, UserOutlined } from '@ant-design/icons';
 import MultiCheck from '../customComp/MultiCheck';
-// import Batch from './Batch';
-// import Batch1 from './Batch1';
-// import Mentor from './Batch';
-// import Mentor1 from './Mentor1';
-// import { BrowserRouter, Link, Route, Switch, Routes } from 'react-router-dom';
-// import Request from './Request';
-// import ModelComp from '../custom/ModelComp';
-// import BreadCrumComp from './BreadCrumComp';
 import MentorBatch from './MentorBatch';
 import Dashboard from './Dashboard';
 import { useState } from 'react';
 
 const { Header, Sider, Content } = Layout;
-
-
 const { Search } = Input;
-
 const onSearch = (value) => console.log(value);
 
 const MentorNavbar = () => {
@@ -36,8 +23,8 @@ const MentorNavbar = () => {
   }
   return  (
   <>
-
     <Layout>
+      {/* Header  */}
         <Header >
           <Row justify="space-around">
             <Col span={8}>
@@ -48,36 +35,24 @@ const MentorNavbar = () => {
             <Input icon={<SearchOutlined />} className='inpNav' placeholder="Search Mentor/Employee"  />
             </Col>
             <Col span={8}>
-              <Button class="pull-right" ml-2='true' varient="bordered-primary">Logout</Button>
+              {/* <Button class="pull-right" ml-2='true' varient="bordered-primary">Logout</Button> */}
+               <Avatar
+                  style={{
+                    backgroundColor: '#87d068',
+                    float:'right'
+                  }}
+                  icon={<UserOutlined />}
+                />
             </Col>
-
         </Row>
-
         </Header>
       <Layout>
+        {/* Side Bar content */}
         <Sider >
-        {/* <Button type="primary"  size="large" onClick={<Batch />}> <img src={require("../asserts/group.png")} alt="/" />  </Button> */}
-         {/* <div>
-          <nav>
-          <Link to="/" >
-            <img src={require("../asserts/group.png")} alt="/" /> 
-            <pre>Batch</pre>
-          </Link>
-          <Link to="/mentor" >
-            <img src={require("../asserts/team (4).png")} alt="/" /> 
-            <pre>Mentor</pre> 
-          </Link>
-          <Link to="/request" >
-            <img src={require("../asserts/add-user.png")} alt="/" /> 
-            <pre>Request</pre>
-          </Link></nav>
-          </div> */}
           <img src={require("../asserts/dashboard (3).png")} alt="/" onClick={changeTable1}/> <br/>
           <img src={require("../asserts/group.png")} alt="/" onClick={changeTable}/> 
-          <link href='' />
-            {/* <img src={require("../asserts/team (4).png")} alt="/" /> 
-            <img src={require("../asserts/add-user.png")} alt="/" />  */}
         </Sider>
+
         <Content
         style={{
           // margin: '24px 16px',
@@ -85,6 +60,8 @@ const MentorNavbar = () => {
           padding: 15,
           minHeight: '100%',
         }}>
+
+          {/* Bread Crum */}
           <Breadcrumb
               style={{
                 margin: '8px 0',
@@ -102,16 +79,8 @@ const MentorNavbar = () => {
               padding: 24,
               minHeight: 460,
             }}
-          >Content
-            {/* <Routes>
-              <Route path="/" element={<Batch1 />}/>
-              <Route path='/mentor' element={<Mentor1 /> } /> 
-              <Route path ='/request' element={<Request />} />
-            </Routes>  */}
- {/* <MultiCheck /> */}
-              {dashboard}
-            {/* <MentorBatch /> */}
-
+          >
+           {dashboard}
           </div></Content>
       </Layout>
     </Layout>

@@ -12,7 +12,7 @@ const ButtonComp = ({
   onclick2= ()=>{},
   style1={},style2={}}) => {
   // const [hidePrev, sethidePrev] = useState(true)
-
+    
   return (
     <div
     style={{

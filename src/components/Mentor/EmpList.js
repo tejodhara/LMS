@@ -1,3 +1,17 @@
+// import React from 'react'
+// import LocNav from './../Home/LocNav';
+
+// function EmpList() {
+//   return (
+//     <div>
+//         <LocNav />
+
+//     </div>
+//   )
+// }
+
+// export default EmpList
+
 import { Divider, Radio, Table } from 'antd';
 import { useState } from 'react';
 import { Badge, Button, Dropdown } from 'react-bootstrap';
@@ -5,12 +19,8 @@ import './Table1.css'
 import InputCom from './../customComp/InputCom';
 import FormComp from './../customComp/FormComp';
 
-const styleEd ={
-  bgcolor: 'none',
-
-}
-
-const Table1 = ({editModal,deleteModal}) => {
+const colData = ["No.",]
+const EmpList = ({editModal,deleteModal}) => {
   const tech =['React JS','JavaScript','HTML']
   const columns = [
     {
@@ -86,42 +96,7 @@ const Table1 = ({editModal,deleteModal}) => {
       status: 'Completed',
       action: '',
     },
-    {
-      key: '2',
-      no: 2,
-      batchId: '#154234653',
-      batchName: 'uplift24',
-      mentorName: 'Sathyam',
-      technologies:'React',
-      startDate: '14 mar 2022',
-      endDate: '14 mar 2022',
-      status: 'Completed',
-      action: '',
-    },
-    {
-      key: '3',
-      no: 3,
-      batchId: '#154234653',
-      batchName: 'uplift24',
-      mentorName: 'Sathyam',
-      technologies:'React',
-      startDate: '14 mar 2022',
-      endDate: '14 mar 2022',
-      status: 'Completed',
-      action: '',
-    },
-    {
-      key: '4',
-      no: 4,
-      batchId: '#154234653',
-      batchName: 'uplift24',
-      mentorName: 'Sathyam',
-      technologies:'React',
-      startDate: '14 mar 2022',
-      endDate: '14 mar 2022',
-      status: 'Completed',
-      action: '',
-    },
+
   ]; // rowSelection object indicates the need for row selection
   
   const rowSelection = {
@@ -159,6 +134,5 @@ const Table1 = ({editModal,deleteModal}) => {
       />
     </div>
   );
-};
-
-export default Table1;
+}
+export default EmpList

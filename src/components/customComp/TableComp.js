@@ -26,3 +26,5 @@ function TableComp({ tablehead, tabelbody, children , ...props}) {
 }
 
 export default TableComp;
+
+

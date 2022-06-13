@@ -37,16 +37,21 @@ function Mentor1() {
     setshowModal(false)
   }
 
+  const editModal =() =>{setshowModal(true)}
+
   return (
     <div>
-        <LocNav batch="Mentor" 
+        <LocNav batch="Mentor Modal" 
           showModal={showModal}
           displayModal={displayModal}
           closeModal ={closeModal}
           modalData={modalData}
+          
         />
         {/* <NavbarComp batch="Mentor"/> */}
-        <Table2 />
+        <Table2 
+          editModal={editModal}
+        />
     </div>
   )
 }

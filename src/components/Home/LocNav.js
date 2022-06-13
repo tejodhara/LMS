@@ -32,7 +32,7 @@ const LocNav = ({batch,val=true,displayModal,closeModal,modalData,showModal}) =>
           showModal={showModal}
           closeModal ={closeModal}
           modalData={modalData}
-    />
+    ></ModalCom>
   </>
 );
 

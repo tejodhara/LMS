@@ -9,6 +9,7 @@ import Mentor1 from './Mentor1';
 import { BrowserRouter, Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import Request from './Request';
 import { useState } from 'react';
+import Login1 from './../Login/Login1';
 
 
 const { Header, Sider, Content } = Layout;
@@ -20,10 +21,22 @@ const NavBar = () => {
   const [displayComp, setdisplayComp] = useState(true)
   const [displayComp1, setdisplayComp1] = useState(false)
   const [navComp, setnavComp] = useState(<Batch1 />)
+  const [breadcrum, setbreadcrum] = useState("Batch")
   
-  const batchNav =() =>{return setnavComp(<Batch1 />)}
-  const mentorNav =() =>{return setnavComp(<Mentor1 />)}
-  const requestNav =() =>{return setnavComp(<Request />)}
+  const batchNav =() =>{
+    setnavComp(<Batch1 />)
+    setbreadcrum("Batch")
+  }
+  const mentorNav =() =>{
+    setnavComp(<Mentor1 />)
+    setbreadcrum("Mentor")
+  }
+  const requestNav =() =>{
+    setnavComp(<Request />)
+    setbreadcrum("Request")
+  }
+
+const navigate =useNavigate(); 
   return (
   <>
 
@@ -38,7 +51,7 @@ const NavBar = () => {
             <Input icon={<SearchOutlined />} placeholder="Search Mentor/Employee"  />
             </Col>
             <Col span={8}>
-              <Button class="pull-right" ml-2='true' varient="bordered-primary">Logout</Button>
+              <Button class="pull-right" ml-2='true' varient="bordered-primary" onClick={()=>{navigate('/')}}>Logout</Button>
             </Col>
 
         </Row>
@@ -92,7 +105,7 @@ const NavBar = () => {
             > 
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item onChange={()=>{}}>
-                  Batch
+                  {breadcrum}
               </Breadcrumb.Item>
             </Breadcrumb>
           

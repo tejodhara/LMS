@@ -13,7 +13,7 @@
     /* width: 1374px;
     height: 917px; */
     width: 800px;
-    height: 550px;
+    height: 545px;
 }
 .cardBody1{
     /* top: 83px;
@@ -21,7 +21,7 @@
     /* width: 464px;
     height: 915px; */
     width: 400px;
-    height: 700px;
+    height: 650px;
     background: #111111 0% 0% no-repeat padding-box;
     padding-top: 50px;
     /* padding-right: 273px; */
@@ -34,9 +34,10 @@
 .clogo{
     /* border: 1px solid black; */
     /* padding-top: 196px; */
-    padding-left: 430px;
+    padding-left: 400px;
     /* padding-bottom: 100 px; */
     padding-right: 383px;
+    display: inline;
 }
 .cardMBody1{
     border: 1px solid black;
@@ -44,7 +45,7 @@
 
 }
 .cardBody2{
-    padding-top: 83px;
+    padding-top: 50px;
     /* padding-right: 273px; */
     padding-left: 430px;
     padding-bottom: 82px;
@@ -53,7 +54,7 @@
     text-align: left;color: white;
 }
 
-input{
+.input1{
     border-radius: 8px;
     width: 310px;
     height: 38px;
